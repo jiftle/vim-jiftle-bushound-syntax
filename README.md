@@ -1,5 +1,5 @@
 # bushound-syntax
-bushound catpter syntax
+vim plug, bushound catpter syntax
 
 
 ### 简介
