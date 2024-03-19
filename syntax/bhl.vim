@@ -28,6 +28,10 @@ syn match BHread "\(ff\|00\)\s\+b[02]"
 syn match BHupdt "\(ff\|0[04]\)\s\+d[6c]"
 syn match BHauth "ff\s\+88"
 
+" ----------- 读头 ------------
+syn match B_Slot_CPU "^ \d\+.\?\d\?\s\+OUT\s\+.*\(6f 00\)"
+syn match B_Slot_SAM "6f\s\+00\s\+00\s\+02"
+
 "--------------修改----------------- lixu
 "--------------用户卡指令
 syn match B_Crd_CPU "00\s\+20"
@@ -156,11 +160,14 @@ syn match B_Drd "ff\s\+cc"
 syn match B_Drd "ff\s\+cd"
 
 "--------------配色
-hi BCrd guifg=gray
-hi BHout guifg=yellow
-hi BHin guifg=blue
-hi BHfind guifg=DarkOliveGreen1 guibg=grey15
-hi BHok guifg=grey15 guibg=green
+hi B_Slot_CPU ctermfg=60 ctermbg=155
+hi B_Slot_SAM ctermfg=30 ctermbg=155
+
+hi BCrd ctermfg=196 guifg=gray
+hi BHout ctermfg=166 guifg=yellow
+hi BHin ctermfg=146 guifg=blue
+hi BHfind ctermfg=60 ctermbg=198 guifg=DarkOliveGreen1 guibg=grey15
+hi BHok ctermfg=10 ctermbg=255 guifg=grey15 guibg=green
 hi link BHfind BHok
 hi BHslct guifg=green guibg=blue
 hi BHread guifg=purple guibg=grey
@@ -168,8 +175,8 @@ hi BHupdt guifg=brown guibg=grey
 hi BHauth guifg=magenta guibg=grey
 
 "-------------------配色
-hi B_Crd_SAM guifg=grey15 guibg=yellow
-hi B_Crd_CPU guifg=grey15 guibg=blue
+hi B_Crd_SAM ctermfg=130 ctermbg=252 guifg=grey15 guibg=yellow
+hi B_Crd_CPU ctermfg=128 ctermbg=252 guifg=grey15 guibg=blue
 hi B_Error guifg=grey15 guibg=red
 hi B_Drd guifg=lightmagenta
 
